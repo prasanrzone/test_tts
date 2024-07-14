@@ -10,3 +10,11 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
 
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - fastapi-tts-app
